@@ -1,0 +1,303 @@
+.projects-section {
+  position: relative;
+}
+
+/* Featured project */
+.featured-project {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
+  padding: var(--space-10);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--teal), transparent);
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+
+/* Two-col layout inside featured */
+.featured-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .featured-layout {
+    grid-template-columns: 1fr;
+  }
+  .featured-visual { display: none; }
+}
+
+/* Featured info */
+.featured-header { margin-bottom: var(--space-5); }
+
+.featured-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.featured-subtitle {
+  font-size: 0.875rem;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+}
+
+.featured-desc {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+  font-size: 0.975rem;
+}
+
+.featured-detail {
+  margin-bottom: var(--space-4);
+}
+
+.detail-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-1);
+}
+
+.featured-detail p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.project-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-top: var(--space-4);
+  line-height: 1.5;
+}
+
+.project-note svg { flex-shrink: 0; margin-top: 1px; stroke: var(--amber); }
+.project-note.small { font-size: 0.73rem; }
+
+.featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.featured-actions { display: flex; gap: var(--space-4); align-items: center; }
+
+.repo-placeholder {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px dashed var(--color-border);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  display: inline-block;
+}
+
+.repo-placeholder.small {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+}
+
+/* Featured visual (code block) */
+.featured-visual {
+  position: relative;
+}
+
+.featured-visual-inner {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-visual-inner::before {
+  content: '● ● ●';
+  display: block;
+  padding: 10px 14px 6px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 4px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.visual-code-block {
+  padding: 16px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+
+.code-line { color: var(--text-muted); }
+.code-line .k { color: #c792ea; }
+.code-line .fn { color: var(--cyan); }
+.code-line .s { color: #c3e88d; }
+
+/* Status dot */
+.status-dot {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #4ade80;
+}
+
+.status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  position: relative;
+}
+
+.status-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid #4ade80;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  70%  { transform: scale(2); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* Other projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+/* Project card */
+.project-card {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-card-icon {
+  color: var(--cyan);
+  padding: 8px;
+  background: var(--cyan-dim);
+  border-radius: var(--radius);
+}
+
+.project-card-ext {
+  color: var(--text-muted);
+  transition: color var(--transition);
+  padding: 4px;
+}
+
+.project-card-ext:hover { color: var(--cyan); }
+
+.project-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.project-card-subtitle {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+}
+
+.project-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.project-collab-note {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.73rem;
+  color: var(--text-muted);
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.project-card-footer {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.project-repo-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cyan);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap var(--transition);
+}
+
+.project-repo-link:hover { gap: 8px; }
+
+@media (max-width: 600px) {
+  .featured-project { padding: var(--space-6); }
+  .featured-title { font-size: 1.4rem; }
+}

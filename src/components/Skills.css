@@ -1,0 +1,121 @@
+.skills-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 180, 216, 0.015) 50%, transparent 100%);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Group card */
+.skills-group {
+  padding: var(--space-8);
+}
+
+.skills-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skills-group-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.skills-group-badge.used {
+  background: rgba(0, 221, 200, 0.12);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 221, 200, 0.3);
+}
+
+.skills-group-badge.learning {
+  background: rgba(0, 180, 216, 0.1);
+  color: var(--teal);
+  border: 1px solid rgba(0, 180, 216, 0.25);
+}
+
+.skills-group-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.skills-group-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Skill list */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.skill-item-inner {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  margin-top: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(0, 221, 200, 0.4);
+}
+
+.skill-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.skill-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Disclaimer */
+.skills-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: var(--space-8);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.skills-disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
